@@ -2,9 +2,21 @@ import Header from "@/components/site/Header";
 import Footer from "@/components/site/Footer";
 import ArticleCard from "@/components/site/ArticleCard";
 import newsHero from "@/assets/news-hero.jpg";
+import newsHero2 from "@/assets/news-hero-2.jpg";
+import newsHero3 from "@/assets/news-hero-3.jpg";
+import newsHero4 from "@/assets/news-hero-4.jpg";
 import sportsImg from "@/assets/sports.jpg";
+import sportsImg2 from "@/assets/sports-2.jpg";
+import sportsImg3 from "@/assets/sports-3.jpg";
+import sportsImg4 from "@/assets/sports-4.jpg";
 import cultureImg from "@/assets/culture.jpg";
+import cultureImg2 from "@/assets/culture-2.jpg";
+import cultureImg3 from "@/assets/culture-3.jpg";
+import cultureImg4 from "@/assets/culture-4.jpg";
 import businessImg from "@/assets/business.jpg";
+import businessImg2 from "@/assets/business-2.jpg";
+import businessImg3 from "@/assets/business-3.jpg";
+import businessImg4 from "@/assets/business-4.jpg";
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
 import {
@@ -40,8 +52,8 @@ const sampleArticles = {
       title: "Regional Infrastructure Plan Advances to Next Stage",
       excerpt:
         "The proposal aims to modernize transit while maintaining fiscal discipline, officials say.",
-      image: newsHero,
-      alt: "Desk with papers and laptop in neutral tones",
+      image: newsHero2,
+      alt: "City skyline at dusk representing global news",
       date: new Date().toISOString(),
       category: "News",
     },
@@ -49,8 +61,8 @@ const sampleArticles = {
       title: "Policy Briefing: Energy Security and Grid Modernization",
       excerpt:
         "Analysts outline timelines for capacity upgrades alongside efficiency incentives.",
-      image: newsHero,
-      alt: "Neutral editorial image of a desk",
+      image: newsHero3,
+      alt: "Press conference microphones on a podium",
       date: new Date().toISOString(),
       category: "News",
     },
@@ -58,8 +70,8 @@ const sampleArticles = {
       title: "Health Officials Track Seasonal Trends Across Regions",
       excerpt:
         "Local agencies coordinate messaging and resource allocation as cases fluctuate.",
-      image: newsHero,
-      alt: "Neutral editorial image",
+      image: newsHero4,
+      alt: "Stack of newspapers on a table",
       date: new Date().toISOString(),
       category: "News",
     },
@@ -78,8 +90,8 @@ const sampleArticles = {
       title: "Rising Prospects Earn International Call-Ups",
       excerpt:
         "Selectors emphasize consistency and preparation ahead of the summer fixtures.",
-      image: sportsImg,
-      alt: "Neutral editorial sports image",
+      image: sportsImg2,
+      alt: "Running track lanes under stadium lights",
       date: new Date().toISOString(),
       category: "Sports",
     },
@@ -87,8 +99,8 @@ const sampleArticles = {
       title: "Preview: Tactical Matchups Shape Weekend Slate",
       excerpt:
         "Coaches highlight set-piece execution and transition defense as key levers.",
-      image: sportsImg,
-      alt: "Neutral editorial sports image",
+      image: sportsImg3,
+      alt: "Basketball court hardwood with ball",
       date: new Date().toISOString(),
       category: "Sports",
     },
@@ -96,8 +108,8 @@ const sampleArticles = {
       title: "Interview: Veteran Captain on Leadership and Balance",
       excerpt:
         "Maintaining standards while integrating youth remains the focus, he says.",
-      image: sportsImg,
-      alt: "Neutral editorial sports image",
+      image: sportsImg4,
+      alt: "Swimming pool lanes with ripples",
       date: new Date().toISOString(),
       category: "Sports",
     },
@@ -116,8 +128,8 @@ const sampleArticles = {
       title: "Festival Returns with Chamber Performances and Talks",
       excerpt:
         "Organizers highlight accessibility and collaboration across local institutions.",
-      image: cultureImg,
-      alt: "Neutral editorial culture image",
+      image: cultureImg2,
+      alt: "Red theater curtain and empty seats",
       date: new Date().toISOString(),
       category: "Culture",
     },
@@ -125,8 +137,8 @@ const sampleArticles = {
       title: "Review: A Poised Adaptation Finds Quiet Power",
       excerpt:
         "Measured pacing and a restrained score underline the film’s reflective tone.",
-      image: cultureImg,
-      alt: "Neutral editorial culture image",
+      image: cultureImg3,
+      alt: "Classical orchestra instruments on stage",
       date: new Date().toISOString(),
       category: "Culture",
     },
@@ -134,8 +146,8 @@ const sampleArticles = {
       title: "Gallery Talk: Preserving the Photographic Archive",
       excerpt:
         "Conservators discuss long-term storage and digitization strategies.",
-      image: cultureImg,
-      alt: "Neutral editorial culture image",
+      image: cultureImg4,
+      alt: "Sculpture in modern museum hall",
       date: new Date().toISOString(),
       category: "Culture",
     },
@@ -154,8 +166,8 @@ const sampleArticles = {
       title: "Logistics Networks Adapt to Shifting Demand",
       excerpt:
         "Shipping schedules see incremental improvements amid continued inventory normalization.",
-      image: businessImg,
-      alt: "Neutral editorial business image",
+      image: businessImg2,
+      alt: "Stock market tickers on digital board",
       date: new Date().toISOString(),
       category: "Business",
     },
@@ -163,8 +175,8 @@ const sampleArticles = {
       title: "Hiring Snapshot: Skills Gap Narrows in Key Sectors",
       excerpt:
         "Targeted training programs align with regional growth initiatives, survey shows.",
-      image: businessImg,
-      alt: "Neutral editorial business image",
+      image: businessImg3,
+      alt: "Office skyline with glass towers",
       date: new Date().toISOString(),
       category: "Business",
     },
@@ -172,8 +184,8 @@ const sampleArticles = {
       title: "Brief: Currency Moves Steady Ahead of Data Releases",
       excerpt:
         "Traders remain cautious with light positioning into the weekend.",
-      image: businessImg,
-      alt: "Neutral editorial business image",
+      image: businessImg4,
+      alt: "Calculator with printed financial charts",
       date: new Date().toISOString(),
       category: "Business",
     },
