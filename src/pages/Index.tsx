@@ -5,6 +5,8 @@ import newsHero from "@/assets/news-hero.jpg";
 import sportsImg from "@/assets/sports.jpg";
 import cultureImg from "@/assets/culture.jpg";
 import businessImg from "@/assets/business.jpg";
+import { Input } from "@/components/ui/input";
+import { Button } from "@/components/ui/button";
 import {
   LineChart,
   Line,
@@ -43,6 +45,24 @@ const sampleArticles = {
       date: new Date().toISOString(),
       category: "News",
     },
+    {
+      title: "Policy Briefing: Energy Security and Grid Modernization",
+      excerpt:
+        "Analysts outline timelines for capacity upgrades alongside efficiency incentives.",
+      image: newsHero,
+      alt: "Neutral editorial image of a desk",
+      date: new Date().toISOString(),
+      category: "News",
+    },
+    {
+      title: "Health Officials Track Seasonal Trends Across Regions",
+      excerpt:
+        "Local agencies coordinate messaging and resource allocation as cases fluctuate.",
+      image: newsHero,
+      alt: "Neutral editorial image",
+      date: new Date().toISOString(),
+      category: "News",
+    },
   ],
   sports: [
     {
@@ -58,6 +78,24 @@ const sampleArticles = {
       title: "Rising Prospects Earn International Call-Ups",
       excerpt:
         "Selectors emphasize consistency and preparation ahead of the summer fixtures.",
+      image: sportsImg,
+      alt: "Neutral editorial sports image",
+      date: new Date().toISOString(),
+      category: "Sports",
+    },
+    {
+      title: "Preview: Tactical Matchups Shape Weekend Slate",
+      excerpt:
+        "Coaches highlight set-piece execution and transition defense as key levers.",
+      image: sportsImg,
+      alt: "Neutral editorial sports image",
+      date: new Date().toISOString(),
+      category: "Sports",
+    },
+    {
+      title: "Interview: Veteran Captain on Leadership and Balance",
+      excerpt:
+        "Maintaining standards while integrating youth remains the focus, he says.",
       image: sportsImg,
       alt: "Neutral editorial sports image",
       date: new Date().toISOString(),
@@ -83,6 +121,24 @@ const sampleArticles = {
       date: new Date().toISOString(),
       category: "Culture",
     },
+    {
+      title: "Review: A Poised Adaptation Finds Quiet Power",
+      excerpt:
+        "Measured pacing and a restrained score underline the film’s reflective tone.",
+      image: cultureImg,
+      alt: "Neutral editorial culture image",
+      date: new Date().toISOString(),
+      category: "Culture",
+    },
+    {
+      title: "Gallery Talk: Preserving the Photographic Archive",
+      excerpt:
+        "Conservators discuss long-term storage and digitization strategies.",
+      image: cultureImg,
+      alt: "Neutral editorial culture image",
+      date: new Date().toISOString(),
+      category: "Culture",
+    },
   ],
   business: [
     {
@@ -103,16 +159,23 @@ const sampleArticles = {
       date: new Date().toISOString(),
       category: "Business",
     },
-  ],
-  related: [
     {
-      title: "Perspective: Building Trust in Data-Driven Policy",
+      title: "Hiring Snapshot: Skills Gap Narrows in Key Sectors",
       excerpt:
-        "Clear communication and consistent standards remain essential for long-term confidence.",
-      image: newsHero,
-      alt: "Neutral editorial image",
+        "Targeted training programs align with regional growth initiatives, survey shows.",
+      image: businessImg,
+      alt: "Neutral editorial business image",
       date: new Date().toISOString(),
-      category: "Analysis",
+      category: "Business",
+    },
+    {
+      title: "Brief: Currency Moves Steady Ahead of Data Releases",
+      excerpt:
+        "Traders remain cautious with light positioning into the weekend.",
+      image: businessImg,
+      alt: "Neutral editorial business image",
+      date: new Date().toISOString(),
+      category: "Business",
     },
   ],
 };
@@ -123,7 +186,7 @@ const Index = () => {
     '@type': 'NewsMediaOrganization',
     name: 'News Outlet',
     url: '/',
-    logo: '/lovable-uploads/logo.png',
+    logo: '/lovable-uploads/a051209b-7855-49d3-a092-2dade21ca186.png',
   };
 
   return (
@@ -148,6 +211,19 @@ const Index = () => {
                 loading="eager"
               />
             </figure>
+          </div>
+        </section>
+
+        <section className="container py-12 md:py-16">
+          <header className="mb-6 flex items-end justify-between">
+            <h2 className="text-2xl font-bold">Top Stories</h2>
+          </header>
+          <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-4">
+            {[sampleArticles.news[0], sampleArticles.sports[0], sampleArticles.culture[0], sampleArticles.business[0]].map(
+              (a, i) => (
+                <ArticleCard key={`top-${i}`} {...a} />
+              )
+            )}
           </div>
         </section>
 
@@ -226,14 +302,61 @@ const Index = () => {
           </div>
         </section>
 
-        <section id="related" className="container py-12 md:py-16">
+        <section className="container py-12 md:py-16">
           <header className="mb-6">
-            <h2 className="text-2xl font-bold">Related</h2>
+            <h2 className="text-2xl font-bold">Editors’ Picks</h2>
           </header>
           <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
-            {sampleArticles.related.map((a, i) => (
-              <ArticleCard key={`related-${i}`} {...a} />
-            ))}
+            {[sampleArticles.culture[2] || sampleArticles.culture[0], sampleArticles.news[1], sampleArticles.business[1], sampleArticles.sports[1]].map(
+              (a, i) => (
+                <ArticleCard key={`picks-${i}`} {...a} />
+              )
+            )}
+          </div>
+        </section>
+
+        <section className="container py-12 md:py-16">
+          <div className="grid gap-8 lg:grid-cols-2">
+            <aside className="rounded-lg border bg-card p-6">
+              <h3 className="mb-4 text-xl font-semibold">Most Read</h3>
+              <ol className="space-y-3 text-sm">
+                {[
+                  "How regional hubs are reshaping tech employment",
+                  "Five charts that explain this week’s market moves",
+                  "Inside the rehearsal rooms of a landmark revival",
+                  "What coaches say about the next generation of stars",
+                  "A practical guide to navigating interest rates",
+                ].map((item, i) => (
+                  <li key={i} className="flex gap-3">
+                    <span className="mt-0.5 inline-flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-secondary text-xs text-secondary-foreground">
+                      {i + 1}
+                    </span>
+                    <span className="text-foreground/80 hover:text-foreground transition-colors cursor-pointer">
+                      {item}
+                    </span>
+                  </li>
+                ))}
+              </ol>
+            </aside>
+
+            <aside className="rounded-lg border bg-card p-6">
+              <h3 className="mb-2 text-xl font-semibold">Newsletter</h3>
+              <p className="mb-4 text-sm text-muted-foreground">
+                Weekly highlights and essential context, straight to your inbox.
+              </p>
+              <form
+                onSubmit={(e) => {
+                  e.preventDefault();
+                  alert("Thanks for subscribing!");
+                }}
+                className="flex flex-col gap-3 sm:flex-row"
+                aria-label="Subscribe to newsletter"
+              >
+                <Input type="email" placeholder="you@example.com" required aria-label="Email address" />
+                <Button type="submit">Subscribe</Button>
+              </form>
+              <p className="mt-2 text-xs text-muted-foreground">No spam. Unsubscribe anytime.</p>
+            </aside>
           </div>
         </section>
       </main>
